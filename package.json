@@ -1,0 +1,39 @@
+{
+  "name": "saku",
+  "version": "0.0.1",
+  "description": "A simple personal blog engine following IndieWeb standards",
+  "main": "app.js",
+  "scripts": {
+    "serve": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arne/saku.git"
+  },
+  "keywords": [
+    "blog",
+    "cms",
+    "microformats",
+    "micropub"
+  ],
+  "author": "Arne Fismen & Marcus Ramberg",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/arne/saku/issues"
+  },
+  "homepage": "https://github.com/arne/saku#readme",
+  "dependencies": {
+    "dotenv": "^6.0.0",
+    "koa": "^2.5.3",
+    "koa-mount": "^3.0.0",
+    "koa-router": "^7.4.0",
+    "koa-static": "^5.0.0",
+    "koa-views": "^6.1.4",
+    "koa.sass": "^1.0.3",
+    "pug": "^2.0.3"
+  },
+  "prettier": {
+    "semi": false,
+    "singleQuote": true
+  }
+}

@@ -1,0 +1,16 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/public/css/main.css')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    link(href="https://micro.blog/arne", rel="me")
+    link(href="https://github.com/arne", rel="me")
+    link(rel="authorization_endpoint" href="https://indieauth.com/auth")
+    link(rel="token_endpoint" href="https://tokens.indieauth.com/token")
+  body
+    include header
+    section.content
+      div.container
+        block content
+    include footer
