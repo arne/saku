@@ -1,5 +1,5 @@
 header
-  div.container.vcard#hcard-Arne-Fismen
+  div.container.vcard(id="hcard-"+settings.name.split(" ").join("-"))
     div.name
       a.url.fn(href="/")= settings.name
     div.avatar
