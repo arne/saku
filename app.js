@@ -2,17 +2,28 @@ const Koa = require('koa')
 const views = require('koa-views')
 const serveSass = require('koa.sass')
 const serveStatic = require('koa-static')
+const bodyParser = require('koa-bodyparser')
 const mount = require('koa-mount')
+const utils = require('./controller/utils')
 
 const CONFIG = require('./config')
 const rootRoutes = require('./routes')
 
 const app = new Koa()
+
+app.use(bodyParser())
+
+app.use(async (ctx, next) => {
+  ctx.state.utils = utils
+  await next()
+})
+
 app.use(
   views(__dirname + '/views', {
     map: {
       html: 'pug'
-    }
+    },
+    extension: 'pug'
   })
 )
 
