@@ -8,6 +8,7 @@ const utils = require('./controller/utils')
 const views = require('koa-views')
 
 const CONFIG = require('./config')
+const DB = require('./db');
 const rootRoutes = require('./routes')
 
 const app = new Koa()
