@@ -3,6 +3,8 @@ extends ../layout
 block content
   form(action="/admin/settings", method="post")
     h2 Settings
+    if message
+      h3= message
     label(for="name") Name
     input#settings-name(type="text", placeholder="name" value=settings.name name="name")
     label(for="site") Site

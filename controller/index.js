@@ -4,7 +4,7 @@ const ctr = {
   index: function(ctx) {
     return ctx.render('index', {
       title: 'hello',
-      settings: db.settings,
+      settings: db.settings.get(),
       posts: db.all()
     })
   }
