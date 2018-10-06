@@ -25,6 +25,15 @@ const ctr = {
         if (!payload.content) payload.content = null
         db.newPost(payload)
         return (ctx.body = 'Added link post')
+      case 'note':
+        if (!payload.content) return (ctx.body = 'You need some content.')
+        db.newPost(payload)
+        return (ctx.body = 'Added note')
+      case 'full':
+        if (!payload.content || !payload.title)
+          return (ctx.body = 'You need a title and content.')
+        db.newPost(payload)
+        return (ctx.body = 'Added full post')
       default:
         return (ctx.body = 'Unknown post type')
     }
