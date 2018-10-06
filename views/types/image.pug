@@ -1,5 +1,5 @@
 article.img
   img(src=post.imgurl)
-  div= post.caption
+  div.md!= utils.md.render(post.content)
   p.meta
-    a(href="#perma-link")= post.date
+    a(href="#perma-link")= utils.moment(post.created).format('DD/MM/YYYY')
