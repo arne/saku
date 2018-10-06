@@ -23,7 +23,7 @@ const actions = {
         ).run(item)
         break
       default:
-        throw('Unknown type: '+item.type)
+        throw 'Unknown type: ' + item.type
     }
   }
 }
