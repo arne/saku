@@ -10,7 +10,7 @@ CONFIG.password       = process.env.PASSWORD        || 'saku'
 CONFIG.app            = process.env.APP             || 'dev'
 CONFIG.port           = process.env.PORT            || '3000'
 
-CONFIG.db_name        = process.env.DB_HOST         || 'example.db'
+CONFIG.db_path        = process.env.DB_HOST         || './db/saku.db'
 
 
 module.exports = CONFIG

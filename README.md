@@ -2,7 +2,7 @@
 
 ## Concept
 
-Saku is a personal cms that let you post things on the internet under your control. Saku wants to support the [indieweb](//indieweb.org) philosophy while as closely as possible.
+Saku is a personal cms that let you post things on the internet under your control. Saku wants to support the [indieweb](//indieweb.org) philosophy.
 
 ## Getting started
 

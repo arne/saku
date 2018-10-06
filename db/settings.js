@@ -1,5 +1,5 @@
-const Database = require('better-sqlite3')
-let db = new Database('./db/example.db')
+const Database = require('better-sqlite3-helper')
+let db = Database()
 
 const settings = {
   get () {

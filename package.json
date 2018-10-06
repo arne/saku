@@ -24,6 +24,7 @@
   "homepage": "https://github.com/arne/saku#readme",
   "dependencies": {
     "better-sqlite3": "^4.1.4",
+    "better-sqlite3-helper": "^1.2.0",
     "dotenv": "^6.0.0",
     "koa": "^2.5.3",
     "koa-basic-auth": "^3.0.0",
