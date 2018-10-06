@@ -1,13 +1,6 @@
-const db = require('../db')
+const admin = require('./admin')
+const blog = require('./blog')
 
-const ctr = {
-  index: function(ctx) {
-    return ctx.render('index', {
-      title: 'hello',
-      settings: db.settings.get(),
-      posts: db.all()
-    })
-  }
-}
+const ctr = Object.assign({ admin: admin }, { blog: blog })
 
 module.exports = ctr

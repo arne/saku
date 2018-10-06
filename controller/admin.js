@@ -1,21 +1,20 @@
 const db = require('../db')
 
-
 const ctr = {
   index: function(ctx) {
     return ctx.render('admin', {
-      settings: db.settings.get(),
-    });
+      settings: db.settings.get()
+    })
   },
   create: function(ctx) {
-  return ctx.render('admin/create', {
+    return ctx.render('admin/create', {
       title: 'hello',
       settings: db.settings.get(),
       posts: db.all()
     })
   },
   update_settings: function(ctx) {
-    db.settings.update(ctx.request.body);
+    db.settings.update(ctx.request.body)
     return ctx.render('admin/settings', {
       message: 'Settings saved',
       settings: db.settings.get()
