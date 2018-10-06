@@ -1,0 +1,10 @@
+extends ../layout
+
+block content
+  form(action="/admin/settings", method="post")
+    h2 Settings
+    label(for="name") Name
+    input#settings-name(type="text", placeholder="name" value=settings.name name="name")
+    label(for="site") Site
+    input#setttings-site(type="text", placeholder="site" value=settings.site name="site")
+    button Publish

@@ -13,7 +13,7 @@ const rootRoutes = require('./routes')
 const app = new Koa()
 
 
-app.use(mount('/create', auth({ name: 'saku', pass: CONFIG.password })));
+app.use(mount('/admin', auth({ name: 'saku', pass: CONFIG.password })));
 
 app.use(bodyParser())
 
