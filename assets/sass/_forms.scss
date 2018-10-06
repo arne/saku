@@ -1,0 +1,26 @@
+form {
+  input,
+  textarea {
+    display: block;
+    font-size: 1rem;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    border: thin solid $bg-el;
+    margin: 0.5rem 0;
+    width: 100%;
+    &:focus {
+      outline: none;
+      border-color: $secondary;
+    }
+  }
+  button {
+    display: block;
+    font-size: 1rem;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    margin: 0.5rem 0;
+    background-color: $primary;
+    border: 0;
+    color: white;
+  }
+}

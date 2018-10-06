@@ -1,4 +1,4 @@
-article.link
-  p= post.content
+article.short
+  div.md!= utils.md.render(post.content)
   p.meta 
-    a(href="#perma-link")= post.date
+    a(href="#perma-link")= utils.moment(post.created).format('DD/MM/YYYY')

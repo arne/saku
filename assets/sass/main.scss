@@ -1,12 +1,15 @@
-@import url('fonts.css');
+@import 'fonts';
+@import 'variables';
+@import 'forms';
+
 html,
 body {
   height: 100%;
 }
 body {
   font-family: Barlow, -apple-system, Helvetica, Arial, sans-serif;
-  background-color: white;
-  color: #232c33;
+  background-color: $bg;
+  color: $text;
   font-size: 16px;
   line-height: 1.2;
   margin: 0;
@@ -16,7 +19,7 @@ body {
   min-height: 100%;
 }
 header {
-  background-color: #232c33;
+  background-color: $primary;
   .vcard {
     padding: 1rem 0;
     display: flex;
@@ -45,18 +48,18 @@ h1 {
 a {
   color: #232c33;
   padding: 0.125rem;
-  border-bottom: 0.125rem solid rgba(0, 0, 0, 0.2);
+  border-bottom: 0.125rem solid $secondary;
   text-decoration: none;
 }
 a:hover {
-  border-color: #333;
+  border-color: darken($secondary, 10%);
 }
 article {
-  margin: 2rem 0;
+  margin: 0 0 2rem;
   p.meta {
     a {
       border: none;
-      color: rgba(0, 0, 0, 0.4);
+      color: $text50;
     }
   }
 }
@@ -74,7 +77,7 @@ ul.nav {
   }
   li::after {
     content: ' / ';
-    color: rgba(255, 255, 255, 0.2);
+    color: $primary;
   }
   li:last-child::after {
     content: '';
@@ -92,4 +95,44 @@ footer,
 .container {
   width: 40rem;
   margin: 0 auto;
+}
+.tabbed {
+  display: flex;
+  flex-wrap: wrap;
+  & > label {
+    order: 1;
+  }
+  .tab {
+    display: none;
+  }
+  .tab + label {
+    padding: 0.25rem 0.5rem;
+    cursor: pointer;
+    background-color: white;
+    border: thin solid $bg-el;
+    border-right: none;
+  }
+  .tab + label:first-of-type {
+    border-top-left-radius: 0.25rem;
+    border-bottom-left-radius: 0.25rem;
+  }
+  .tab + label:last-of-type {
+    border: thin solid $bg-el;
+    border-top-right-radius: 0.25rem;
+    border-bottom-right-radius: 0.25rem;
+  }
+  .tab:checked + label {
+    background-color: $secondary;
+    color: white;
+  }
+  form {
+    order: 99;
+    flex-grow: 1;
+    width: 100%;
+    display: none;
+    background: #fff;
+  }
+  .tab:checked + label + form {
+    display: block;
+  }
 }

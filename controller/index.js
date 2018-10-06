@@ -1,25 +1,33 @@
-const CONFIG = require('../config')
+const db = require('../db')
 
 const ctr = {
   index: function(ctx) {
-    return ctx.render('index.pug', {
+    return ctx.render('index', {
       title: 'hello',
-      config: CONFIG,
-      posts: [
-        {
-          type: 'link',
-          title: 'Hello world!',
-          content: 'Testing',
-          url: '//google.com',
-          date: '2018-09-21'
-        },
-        {
-          type: 'short',
-          content: 'Just a multiline text',
-          date: '2018-09-21'
-        }
-      ]
+      settings: db.settings,
+      posts: db.all()
     })
+  },
+  create: function(ctx) {
+    return ctx.render('create', {
+      title: 'hello',
+      settings: db.settings,
+      posts: db.all()
+    })
+  },
+  new: function(ctx) {
+    console.log(ctx.request.body)
+    let payload = ctx.request.body
+    switch (payload.type) {
+      case 'link':
+        if (!payload.url || !payload.title)
+          return (ctx.body = 'A link post requires a url and title')
+        if (!payload.content) payload.content = null
+        db.newPost(payload)
+        return (ctx.body = 'Added link post')
+      default:
+        return (ctx.body = 'Unknown post type')
+    }
   }
 }
 
