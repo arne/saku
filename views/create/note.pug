@@ -1,4 +1,5 @@
-form
-  p Write a note, publish it quickly
-  textarea#note(name="", cols="30", rows="10")
-  button Publish!
+form(action="/new", method="post")
+  p Just write a note, it can be anyting, and doesn't have a title
+  input(type="hidden", name="type", value="note")
+  textarea#link-content(name="content", cols="30", rows="10")
+  button Publish

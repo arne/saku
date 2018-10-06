@@ -1,2 +1,6 @@
-form
-  p Full post
+form(action="/new", method="post")
+  p If you want to be more elaborate, feel free.
+  input(type="hidden", name="type", value="full")
+  input#full-title(type="text", placeholder="title", name="title")
+  textarea#full-content(name="content", cols="30", rows="10")
+  button Publish
