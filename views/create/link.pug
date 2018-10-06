@@ -1,0 +1,7 @@
+form(action="/new", method="post")
+  p Link post
+  input(type="hidden", name="type", value="link")
+  input#link-title(type="text", placeholder="title", name="title")
+  input#link-url(type="text", placeholder="url" name="url")
+  textarea#link-content(name="content", cols="30", rows="10")
+  button Publish

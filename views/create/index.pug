@@ -1,0 +1,17 @@
+extends ../layout
+
+block content
+  h1 Create post
+  .types.tabbed
+    input#link.tab(type="radio", name="tabs", checked="checked")
+    label(for="link") Link
+    include link
+    input#image.tab(type="radio", name="tabs")
+    label(for="image") Image
+    include image
+    input#note.tab(type="radio", name="tabs")
+    label(for="note") Note
+    include note
+    input#full.tab(type="radio", name="tabs")
+    label(for="full") Full
+    include full
