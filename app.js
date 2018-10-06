@@ -1,5 +1,5 @@
 const Koa = require('koa')
-const auth = require('koa-basic-auth');
+const auth = require('koa-basic-auth')
 const bodyParser = require('koa-bodyparser')
 const mount = require('koa-mount')
 const serveSass = require('koa.sass')
@@ -8,12 +8,20 @@ const utils = require('./controller/utils')
 const views = require('koa-views')
 
 const CONFIG = require('./config')
+const DB = require('./db')
 const rootRoutes = require('./routes')
 
 const app = new Koa()
 
-
-app.use(mount('/create', auth({ name: 'saku', pass: CONFIG.password })));
+app.use(
+  mount(
+    '/create',
+    auth({
+      name: 'saku',
+      pass: CONFIG.password
+    })
+  )
+)
 
 app.use(bodyParser())
 
