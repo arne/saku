@@ -24,27 +24,34 @@ const ctr = {
     return ctx.render('admin/settings', { settings: db.settings.get() })
   },
   new: function(ctx) {
-    console.log(ctx.request.body)
     let payload = ctx.request.body
     switch (payload.type) {
       case 'link':
         if (!payload.url || !payload.title)
           return (ctx.body = 'A link post requires a url and title')
         if (!payload.content) payload.content = null
-        db.newPost(payload)
-        return (ctx.body = 'Added link post')
+        break
       case 'note':
         if (!payload.content) return (ctx.body = 'You need some content.')
-        db.newPost(payload)
-        return (ctx.body = 'Added note')
+        break
       case 'full':
         if (!payload.content || !payload.title)
           return (ctx.body = 'You need a title and content.')
-        db.newPost(payload)
-        return (ctx.body = 'Added full post')
+        break
       default:
         return (ctx.body = 'Unknown post type')
     }
+    if (payload.title) {
+      payload.slug = ctx.state.utils.slugify(payload.title, {
+        replacement: '-',
+        remove: /[*+~.()'"!?:@]/g,
+        lower: true
+      })
+    } else {
+      payload.slug = ctx.state.utils.moment().format('H-mm-ss')
+    }
+    db.newPost(payload)
+    return (ctx.body = 'Published ' + payload.type)
   }
 }
 

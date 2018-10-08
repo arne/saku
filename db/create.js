@@ -5,23 +5,26 @@ const actions = {
   newPost(item) {
     switch (item.type) {
       case 'link':
-        db.prepare(
-          'INSERT INTO posts (type, title, content, url, created, updated) VALUES (:type, :title, :content, :url, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);'
-        ).run(item)
-        break
+        return db
+          .prepare(
+            'INSERT INTO posts (type, title, content, url, slug, created, updated) VALUES (:type, :title, :content, :url, :slug, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);'
+          )
+          .run(item)
       case 'full':
-        db.prepare(
-          'INSERT INTO posts (type, title, content, created, updated) VALUES (:type, :title, :content, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);'
-        ).run(item)
-        break
+        return db
+          .prepare(
+            'INSERT INTO posts (type, title, content, slug, created, updated) VALUES (:type, :title, :content, :slug, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);'
+          )
+          .run(item)
       case 'image':
         console.log('Image posts are not implemented yet')
         break
       case 'note':
-        db.prepare(
-          'INSERT INTO posts (type, content, created, updated) VALUES (:type, :content, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);'
-        ).run(item)
-        break
+        return db
+          .prepare(
+            'INSERT INTO posts (type, content, slug, created, updated) VALUES (:type, :content, :slug, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);'
+          )
+          .run(item)
       default:
         throw 'Unknown type: ' + item.type
     }
