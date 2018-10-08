@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  case post.type
+    when 'link'
+      include types/link
+    when 'note'
+      include types/note
+    when 'full'
+      include types/post
+    when 'image'
+      include types/image

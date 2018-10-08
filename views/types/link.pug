@@ -1,6 +1,6 @@
-article.link
-  h1
-    a(href=post.url)= post.title
-  div.md!= utils.md.render(post.content)
+article.link.h-entry
+  h1.p-name
+    a.u-in-reply-to(href=post.url)= post.title
+  div.md.e-content!= utils.md.render(post.content)
   p.meta
-    a(href="#perma-link")= utils.moment(post.created).format('DD/MM/YYYY')
+    a.u-url(href="#perma-link")= utils.moment(post.created).format('DD/MM/YYYY')
