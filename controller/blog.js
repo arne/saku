@@ -7,6 +7,9 @@ const ctr = {
       settings: db.settings.get(),
       posts: db.all()
     })
+  },
+  archive: function(ctx) {
+    return (ctx.body = 'not done')
   }
 }
 
