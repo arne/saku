@@ -8,11 +8,13 @@ html,
 body {
   height: 100%;
 }
+html {
+  font-size: 20px;
+}
 body {
   font-family: Barlow, -apple-system, Helvetica, Arial, sans-serif;
   background-color: $bg;
   color: $text;
-  font-size: 16px;
   line-height: 1.2;
   margin: 0;
   padding: 0;
