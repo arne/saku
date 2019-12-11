@@ -1,5 +1,5 @@
 const moment = require('moment')
-const Remarkable = require('remarkable')
+const { Remarkable } = require('remarkable')
 const md = new Remarkable()
 
 const utils = {
