@@ -36,7 +36,7 @@
     "koa.sass": "^1.0.3",
     "moment": "^2.24.0",
     "nodemon": "^2.0.1",
-    "pug": "^2.0.4",
+    "pug": "^3.0.1",
     "remarkable": "^2.0.0"
   },
   "prettier": {
